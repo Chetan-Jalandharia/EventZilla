@@ -12,7 +12,7 @@ export default () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        axios.get(`https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=${page}&type=upcoming`).then(val => {
+        axios.get(`${import.meta.env.VITE_UPCOM_EVENT}${page}&type=upcoming`).then(val => {
             console.log(val.data.events);
             setUpcomeEvents((pre) => {
                 return [...pre, ...val.data.events];
@@ -60,7 +60,7 @@ export default () => {
 
                 </Row>
                 <Row>
-                    {loading && <Col> <Loader/></Col>}
+                    {loading && <Col> <Loader /></Col>}
                 </Row>
 
             </Container>
