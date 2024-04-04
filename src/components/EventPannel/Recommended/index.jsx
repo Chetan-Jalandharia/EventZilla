@@ -8,7 +8,7 @@ export default () => {
     const [RecommendEvents, setRecommendEvents] = useState([])
 
     useEffect(() => {
-        axios.get(import.meta.env.VITE_REC_EVENT).then(val => {
+        axios.get("https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco").then(val => {
             setRecommendEvents(val.data?.events)
         }).catch(err => {
             console.log(err);
