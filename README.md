@@ -1,5 +1,5 @@
 
-# GyanGrove - Event Recommendation Application
+# EventZilla - Event Recommendation Application
 
 The primary objective of this Application is to create a comprehensive and user-friendly platform that caters to the diverse needs of event-goers and organizers alike. EventHub aims to provide personalized event recommendations, streamline event management processes, and foster vibrant community engagement.
 
