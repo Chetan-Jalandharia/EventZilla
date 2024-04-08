@@ -1,17 +1,25 @@
 import './App.css'
-import Banner from './components/Banner';
-import Navbar from "./components/Navbar";
-import REvents from "./components/EventPannel/Recommended";
-import UEvents from "./components/EventPannel/Upcomming";
+import React, { Suspense } from 'react';
+import Loader from './components/Loader';
+
+const Banner = React.lazy(() => import('./components/Banner'));
+const Navbar = React.lazy(() => import('./components/Navbar'));
+const REvents = React.lazy(() => import('./components/EventPannel/Recommended'));
+const UEvents = React.lazy(() => import('./components/EventPannel/Upcomming'));
 
 function App() {
-  
+
   return (
     <>
-    <Navbar/>
-    <Banner/>
-    <REvents/>
-    <UEvents/>
+
+      <Suspense fallback={
+        <Loader />
+        }>
+        <Navbar />
+        <Banner />
+        <REvents />
+        <UEvents />
+      </Suspense>
     </>
   )
 }
